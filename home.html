@@ -1,0 +1,191 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce</title>
+
+    <!-- -------------------------- Importo Bootstrap -------------------------- -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- --------------------- Importo cdn Bootstrap Icon ---------------------- -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- ------------------------- Importo FontAwesome ------------------------- -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+
+    <!-- ------------------------------- SWIPER I -------------------------------- -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    
+    <link rel="stylesheet" href="./css/style.css">
+
+ </head>
+ <body>
+     <!-- 
+        Realizzare un intero sito e-commerce utilizzando Bootstrap e DummyJSON (https://dummyjson.com/).
+
+        Andando a cercare su internet un template o un sito esistente a cui ispirarsi, creare tutte le pagine di un tipico sito e-commerce:
+            - homepage
+            - elenco prodotti
+            - dettaglio prodotto
+            - carrello
+            - checkout
+            - più tutte le altre pagine che possono venire in mente
+        
+        In homepage riportare alcuni dei prodotti. (OPZIONALE: mettere uno slider o un carosello utilizzando SwiperJS o Slick Slider)
+
+        Nell'elenco prodotti deve essere possibile filtrare i prodotti almeno per categoria.
+
+        Nel dettaglio prodotto devono potersi vedere tutte le immagini del prodotto (meglio ancora se ci fossero le miniature sotto un contenitore più grande e l'utente potesse scegliere quale foto vedere "ingrandita" al click)
+
+        Il carrello, consultabile da ogni pagina, deve contenere i prodotti aggiunti dall'utente e il prezzo totale, oltre a poterli togliere.
+    -->
+    
+
+    <container id="main-container">
+        <header id="main-header" class="d-flex">
+            <nav id="nav" class="navbar navbar-expand-lg fixed-top">
+                <div class="container">
+                    <a class="navbar-brand" href="#"><i class="fa-solid fa-gamepad"></i>E-commerce</a>
+                    <button class="navbar-toggler btn btn-outline-info" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#coroules">Prodotti</a>
+                                <!-- va direttamente poco sotto nella pagina al carosello prodotti -->
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Carrello</a>
+                                <!-- inserire in href la pagina nuova html per il carrello -->
+                            </li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- ------------------------------ CAROSELLO ------------------------------ -->
+        
+        <section id="coroules">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <!-- forEach telefono va creata una slide con dentro una card nello slider! -->
+                    <!-- <div class="swiper-slide">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://source.unsplash.com/600x400?black+cat" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Lorem, ipsum</p>
+                                MODAL
+                                <button id="btnMaggioriInfo" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Maggiori info</button>
+                            </div>
+                        </div>
+                    </div> -->
+        
+                </div>
+            <div class="swiper-pagination"></div>
+            </div>
+        </section>
+    </container>
+
+
+    <!-- -------------------------------- Footer -------------------------------- -->
+    
+    <!-- <footer id="footer">
+        <div class="card text-center container-fluid">
+            <div class="card-header fs-3">
+              Gruppo di lavoro 3
+            </div>
+            <div class="card-body">
+              <ul class="d-flex list-unstyled ps-0 gap-3 fs-5">
+                <li>Andrea Di Fiore</li>
+                <li>Claudia Pezzoli</li>
+                <li>Luca Savini</li>
+                <li>Youssef Fakir</li>
+                <li>Ruggero Aldo Meletani</li>
+              </ul>
+            </div>
+        </div>
+    </footer> -->
+    
+
+    <!-- -------------------------------- MODAL -------------------------------- -->
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen"> 
+            <!-- centrato verticalmente -->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Acquista</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <script src="./js/home.js"></script>
+
+
+    <!-- ------------------------------ Bootstrap ------------------------------ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- ------------------------------ SWIPER II ------------------------------ -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // inizializza oggetto swiper sulla costante swiper
+        const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'vertical',
+        loop: true,
+
+        slidesPerView: 1, //mobile first
+        //+ blocco di breakpoints:
+        breakpoints: {
+            768: {
+            slidesPerView: 2,
+            spaceBetween: 20, //spazio tra le slide
+            },
+            992: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+            },
+            1200: {
+            slidesPerView: 5,
+            spaceBetween: 50,
+            },
+        },
+
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+        });
+    </script>
+ </body>
+ </html>
+ 

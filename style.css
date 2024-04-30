@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+#main-container::after{ /*pseudoelemento*/
+    content:'';
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    /* gradient generator linear */
+    background: rgb(174,209,238);
+    background: linear-gradient(90deg, rgba(174,209,238,1) 0%, rgba(148,158,233,1) 100%);
+}
+
+.offcanvas-header, .offcanvas-body{
+    background-color: rgb(69, 187, 196);
+}
